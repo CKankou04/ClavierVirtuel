@@ -1,0 +1,179 @@
+
+@charset "utf-8";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* style du body*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 10px; ;
+    padding: 10px; ;
+}
+/* style de l'entête du clavier*/
+.entete{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+/* Contenu principal*/
+#pagecontent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* le champs dédié à la saisie du texte */
+textarea {
+    display: block;
+    margin-left: 20%;
+    padding: 2%;
+    width: 60%;
+    height: 25%;
+    line-height: 1.5;
+    border-radius: 1rem;
+    border: 10px solid #222b2667;  
+    position: absolute; 
+}
+/* le container des touches*/
+.container{
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 15% 15% 0 15%;
+    padding: 1.5%;
+    background-color: #222b2667;
+    border-radius: 1%;
+    display:grid;
+    grid-template-rows:1fr;
+    gap:1%;
+}
+/*mise en forme sur les boutons*/
+kbd {
+    background-color: rgb(36, 22, 22);
+    border-radius: 5px;
+    border: 1px solid #252323;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: whitesmoke; 
+    font-size: 130%;
+    padding: 0.5% 2.5%;
+    grid-column: span 2;    /*La fusion des span au niveau des kbd*/
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+   }
+
+/*rendre les boutons actifs*/  
+kbd:active {
+    border: 1px solid #eee;
+    box-shadow: 0 1px rgb(243, 243, 243);
+    transform: translateY(2px);
+}
+/*Première ligne du clavier*/
+.kbd_line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: unset;
+    padding-bottom: 1ch;
+}
+/*deuxieme ligne du clavier*/
+.kbd_line2{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: unset;
+    padding-bottom: 1ch;
+}
+/*troisième ligne du clavier*/
+.kbd_line3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 1ch;
+}
+/*Quatrième ligne du clavier*/
+.kbd_line4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 1ch;
+}
+/*Cinquième ligne du clavier*/
+.kbd_line5{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 1ch;
+}
+/*Mise en forme de la touche espace*/
+.kbd_espace {
+    grid-template-columns: 2fr;
+    width:  80%;
+    height: 130%;
+    text-align: center;
+}
+/*touche retour*/
+.echap{
+    grid-template-columns: 1fr 60px;     
+}
+/*touche entré*/
+.entrer{
+    grid-template-columns: 1fr 40px;
+    padding: 20px 25px;
+}
+/*touche Majuscule / Miniscule*/
+.capslock{
+    grid-template-columns: 1fr 30px;
+    padding: 20px 25px;
+}
+/*Gestion du led*/
+.capsled::after {
+    content: '';
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+}
+/*activation du led*/
+.capsled-on::after {
+    background: #06fd06;
+}
+.modenuit .label{
+    display: flex;
+    align-content: space-between;  
+}
+/*rendre invisible le carré du checkbox*/
+.checkbox{
+opacity: 0;
+}
+/*Gestion de la transitiion de la balle entre le soleil et la lune*/
+.modenuit .label .ball {
+    margin-left: 18px;
+    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgb(232, 238, 233); /*couleur de la ball quand on est en modejour*/
+    transition: 1s;
+}
+.modenuit #chk:checked + .label .ball{
+    margin-left: 2px;
+    margin-right: 18px;
+    background: red;/*couleur de la ball quand on est en mode nuit*/
+}
+/*le pied de page*/
+#mainfooter{
+    text-align: center;
+    padding-top: 2%;
+    color: lightcoral;
+}
